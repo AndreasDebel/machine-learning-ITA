@@ -3,7 +3,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-from python_project.prime import is_prime, next_prime, prev_prime
+from python_project.prime.core import is_prime, next_prime, prev_prime
 
 PRIME_FG = "#1a7f37"
 NOT_PRIME_FG = "#b3261e"
