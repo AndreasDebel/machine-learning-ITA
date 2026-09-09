@@ -8,6 +8,7 @@ dependencies = []
 
 [project.scripts]
 python-project = "python_project.main:main"
+python-project-gui = "python_project.gui:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
