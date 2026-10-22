@@ -1,6 +1,6 @@
 import pytest
 
-from python_project.prime.core import is_prime, next_prime, prev_prime
+from python_project.exercises.week_01.prime.core import is_prime, next_prime, prev_prime
 
 
 @pytest.mark.parametrize("n", [2, 3, 5, 7, 13, 97, 7919, 104729])
