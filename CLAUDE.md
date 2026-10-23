@@ -52,6 +52,12 @@ venv. If imports fail in tests, the editable install is missing or stale; re-run
 scripts, runtime dependencies, the `dev` extra (pytest only), and pytest's
 `testpaths = ["tests"]`.
 
+## Reading PDFs
+
+Poppler is installed (winget). Use the Read tool with `pages` for PDFs; if it reports
+`pdftoppm is not installed`, the shell has a stale PATH (restart VS Code). Fallback:
+`pdftotext -layout <file> -` for text, `pdftoppm -png -r 80 -f N -l M <file> <prefix>` for page images.
+
 ## Constraints
 
 - Requires Python >= 3.13.

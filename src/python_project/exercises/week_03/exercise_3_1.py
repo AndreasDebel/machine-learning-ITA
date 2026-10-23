@@ -4,7 +4,7 @@ from sklearn import linear_model
 
 # Array of points with a classification
 X = np.array(np.matrix('6,350; 2.5,400;4.5,500; 3.5,350;2,300;4,600;7,300;5,500;5,400;6,400;3,400;4,500;1,200;3,400;7,700;3,550;2.5,650'))
-y = np.array(np.matrix('0;0;1;0;0;1;1;0;1;0;0;0;1;1;0;0;0'))[:, 0]
+y = np.array(np.matrix('0;0;1;0;0;1;1;1;0;1;0;0;0;0;1;1;0'))[:, 0]
 
 pos = np.where(y == 1)
 neg = np.where(y == 0)
