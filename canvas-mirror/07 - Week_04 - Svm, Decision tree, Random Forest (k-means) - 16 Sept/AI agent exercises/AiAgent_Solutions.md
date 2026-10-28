@@ -1,0 +1,12 @@
+# AiAgent_Solutions.zip
+
+Source: `AiAgent_Solutions.zip` - 6 files, no code. Student group hand-ins for the week 4 AI agents exercise (see `w4_AiAgents_Exercise.md`), mostly in Danish, plus a copy of the template.
+
+| File                               | Content                                                                                                                                                                                                  |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ai chatbot.pdf (2 p.)              | Group "asgi og benji". Agent = AI model deciding which tool/action to take (input -> model -> decision -> tool -> result -> model). Idea: "Jarvis for your phone", personal butler / better Siri for reminders; helps elderly and students. Tech: agent, LLM, APIs, MCP servers, frontend, member DB, app, backend. |
+| Excercise template 16_9.pdf (1 p.) | Mikkel, Mikkel, Sigurd. RAG pipeline for legal case handling (bot for resident questions, complaints, objections). Agents for code review, test, compliance; re-ranker, search, vector DB, frontend. Day 1: generate .md files, agent architecture spec, cron jobs. |
+| Machine Learning.pdf (1 p.)        | "The Duovengers" (Frederik, Matthias). Internal company chatbot using company data plus external trends (delivery delays, profit vs petrol price). Tech: MCP servers, web app, backend, data integrations. 1 day walking skeleton on pure GPT; 3 days connected to business data; 1 week main data sources plus authorization; MVP gives useful answers without false info. |
+| Struktur.docx                      | "Thor & Stine". "Homework Agent" tracks competence per module and curates Canvas material into micro-learning; works with a "Calendar Agent" (read/write calendar). Tech: agent structure, Canvas APIs (crawler fallback), calendar APIs, app with dashboards and DB. |
+| VoresForslag.docx                  | "Oskar & Tony". Phone app with AI agent tracking food in the kitchen and nutrition, suggesting meals, updating shopping list. Input via shopping list / fridge photo / smart fridge; agent uses MCP server for food stock, profile, meals, recipes. 1 day: finished MVP of meal planning only. |
+| w4_AiAgents_Exercise_Template.odt  | The blank template (see `w4_AiAgents_Exercise_Template.md`). |
