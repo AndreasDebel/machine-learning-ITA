@@ -35,7 +35,12 @@ package is `python_project` (under `src/`); the distribution name is `python-pro
   and a GUI (`gui.py`).
 - `tests/` - `test_main.py`, `test_prime.py`, plus a `tests/exercises/` folder.
 - `canvas-mirror/` - local mirror of the Canvas course material (exercise PDFs, Jupyter guides,
-  slides), one folder per week. Read-only reference, not code.
+  slides), one folder per week. Read-only reference, not code. Start with
+  `canvas-mirror/INDEX.md` to locate files; read it before searching the mirror by hand.
+- `handin-titanic/` - working folder for the individual Titanic hand-in (due Mon 2 Nov 2026, 20:00):
+  `titanic.py`, `titanic_800.csv`, `decisions.md`, `expected-solution-findings.md`. Start with
+  `handin-titanic/INDEX.md` (links the assignment text, hand-in checklist and submission rules)
+  for any Titanic work. The assignment text itself lives in `canvas-mirror/03 - ...`.
 - `exercise_docx_from_claude/` - generated exercise docx files.
 
 Entry points (in `pyproject.toml`): `python -m python_project.main` and the `python-project`
