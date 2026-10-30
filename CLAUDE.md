@@ -66,7 +66,7 @@ Poppler is installed (winget). Use the Read tool with `pages` for PDFs; if it re
 ## Constraints
 
 - Requires Python >= 3.13.
-- Runtime dependencies: `matplotlib`, `numpy`, `scikit-learn`. Adding one means editing
+- Runtime dependencies: `matplotlib`, `numpy`, `pandas`, `scikit-learn`. Adding one means editing
   `[project].dependencies` in `pyproject.toml` and re-running the editable install.
   Notebook work additionally needs `jupyter`, `ipykernel` and `scipy`, which are not declared.
 - `.venv/` and `.env` are gitignored. A fresh clone has no venv: create it with
