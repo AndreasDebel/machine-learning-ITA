@@ -22,6 +22,7 @@ Run from inside this folder: `clean.py` first (writes everything in `data/`), th
 | [final-report.md](final-report.md)                             | Draft answers in Danish, section by section; the source for the 1-page report                  |
 | [decisions.md](decisions.md)                                   | Decisions made so far and what is still open                                                   |
 | [expected-solution-findings.md](expected-solution-findings.md) | What kind of solution is expected, from the Canvas files                                       |
+| [visuals/](visuals/)                                           | Learning aids, not handed in: model plots and comparison; run the notebooks from that folder  |
 
 ## Hand-in contents (to be added)
 
@@ -30,4 +31,4 @@ Run from inside this folder: `clean.py` first (writes everything in `data/`), th
 - [ ] Data file(s) only if needed and the zip stays under 2 MB (`data/` is about 0.2 MB)
 
 Working notes, leave out of the zip: `INDEX.md`, `data/INDEX.md`, `expected-solution-findings.md`, `decisions.md`,
-`final-report.md`.
+`final-report.md`, `visuals/`.

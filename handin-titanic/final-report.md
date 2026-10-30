@@ -131,6 +131,32 @@ ligger på en sammenlignelig skala, og `Survived` skaleres ikke, da den er label
 træningssættet. Træbaserede modeller som random forest påvirkes ikke af skalering, men den gør det muligt at
 sammenligne med andre modeller.
 
+## C) Valg af model og træning
+
+**Valg:** Et **decision tree** (foreløbigt valg). Træningen er ikke lavet endnu. Valget bygger på data og opgaven, ikke på
+målte resultater.
+
+**Hvorfor decision tree:**
+
+- **Passer til data:** Datasættet er en lille tabel, og overlevelse fulgte sandsynligvis regellignende mønstre
+  ("kvinder og børn først"). Et træ arbejder netop med ja/nej-spørgsmål, fx om `Sex` eller `Age`.
+- **Fanger samspil:** Betydningen af køn afhænger sandsynligvis af klassen. Et træ kan håndtere det uden hjælp, fordi
+  hvert spørgsmål stilles inden for den gruppe, de tidligere spørgsmål har dannet.
+- **Kan forklares:** Man kan følge en passager gennem træet og se præcis, hvorfor forudsigelsen blev, som den blev.
+
+**Kendte svagheder:** Et træ kan overfitte og er følsomt over for små ændringer i træningsdata. Overfitting begrænses
+med `max_depth`, og i sektion E er det planen at sammenligne med en **random forest**, der gennemsnitter mange træer og
+derfor er mere stabil. Rækkefølgen følger kursets råd om at starte simpelt, og E bliver dermed en konkret test af, om
+mange træer slår ét.
+
+**Fravalgt:**
+
+- **Logistisk regression:** enkel og forklarlig, men fanger kun samspil, hvis de tilføjes manuelt.
+- **SVM:** kan fange samspil med en kernel, men er sværere at forklare.
+- **Random forest:** mere stabil, men sværere at forklare end ét træ. Gemmes til sektion E.
+- **MLP (neuralt netværk):** kursets model i Titanic-øvelsen (uge 6), men svær at forklare og med mange tal at lære
+  (153 ved `(8,8)`) ud fra kun 640 passagerer.
+
 ## Skal nævnes i den endelige rapport (1 side)
 
 - [ ] Hvorfor Titanic er valgt frem for Supply Chain (krav i opgaven).
@@ -142,4 +168,5 @@ sammenligne med andre modeller.
 - [ ] B: Opdeling i trænings-/testsæt med begrundelse for størrelserne: 80/20 (640/160), stratificeret, fast `random_state` (se `decisions.md`).
 - [ ] B: Skalering med `StandardScaler` af `Pclass`, `Age`, `Fare` (se "Skalering"); skalering og udfyldning fittes kun
   på træningssættet (afviger bevidst fra opgavens rækkefølge, undgår datalæk).
-- [ ] C-E: Model, træning, evaluering og eksperimenter. *Ikke lavet endnu.*
+- [ ] C: Valg af decision tree med begrundelse og fravalg (se "C) Valg af model og træning"). Træning *ikke lavet endnu.*
+- [ ] D-E: Evaluering og eksperimenter. *Ikke lavet endnu.*

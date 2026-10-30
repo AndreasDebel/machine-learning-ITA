@@ -18,10 +18,7 @@ Outcome of the grill-me session. The requirements themselves are in `expected-so
 | Missing `Embarked`  | 1 row; `S` filled before the split (the mode in any split)                                         |
 | `Embarked` encoding | One-hot: `Embarked_C`, `Embarked_Q`, `Embarked_S` (ports have no order)                            |
 | Scaling             | `StandardScaler` on `Pclass`, `Age`, `Fare` only; fitted on training set (course week 6 precedent) |
-
-## Postponed (not decided)
-
-- **Model** - to be discussed at length; it is part of the assignment (section C).
+| Model               | Decision tree (section C), for now; random forest planned for section E; see `final-report.md`     |
 
 ## Terms agreed on
 
