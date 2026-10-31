@@ -133,8 +133,7 @@ sammenligne med andre modeller.
 
 ## C) Valg af model og træning
 
-**Valg:** Et **decision tree** (foreløbigt valg). Træningen er ikke lavet endnu. Valget bygger på data og opgaven, ikke på
-målte resultater.
+**Valg:** Et **decision tree**. Modeltypen er valgt ud fra data og opgaven, ikke ud fra målte resultater.
 
 **Hvorfor decision tree:**
 
@@ -148,6 +147,19 @@ målte resultater.
 med `max_depth`, og i sektion E er det planen at sammenligne med en **random forest**, der gennemsnitter mange træer og
 derfor er mere stabil. Rækkefølgen følger kursets råd om at starte simpelt, og E bliver dermed en konkret test af, om
 mange træer slår ét.
+
+**Valg af dybde:** `max_depth` vælges med 5-fold krydsvalidering på træningssættet: de 640 rækker deles i fem dele, og
+hver del bruges én gang til validering, mens træet trænes på de fire andre. Testsættet bruges ikke, så det forbliver en
+ærlig slutmåling. Valget falder på den simpleste dybde, hvis score ligger inden for én standardafvigelse af den bedste:
+den bedste er dybde 8 med 81,6 % (±0,8), så grænsen er 80,8 %, og **dybde 5** (80,9 %) er den simpleste, der når den.
+Dybderne 3-8 ligger dog så tæt, at valget i praksis er et skøn og ikke et præcist resultat.
+
+Træningsnøjagtigheden indgår ikke i valget, men bruges som kontrol. Ved dybde 5 er den 86,3 %, 5,4 point over
+krydsvalideringen, mod 10,3 point ved dybde 8. Lave scores på begge mål ville betyde, at træet er for simpelt. Et træ
+uden dybdegrænse når derimod 98,9 % på træningsdata, men kun 77,3 % i krydsvalidering: det har lært træningsdata udenad
+i stedet for generelle mønstre.
+
+Det endelige træ trænes derefter på alle 640 rækker med `max_depth=5`.
 
 **Fravalgt:**
 
@@ -168,5 +180,6 @@ mange træer slår ét.
 - [ ] B: Opdeling i trænings-/testsæt med begrundelse for størrelserne: 80/20 (640/160), stratificeret, fast `random_state` (se `decisions.md`).
 - [ ] B: Skalering med `StandardScaler` af `Pclass`, `Age`, `Fare` (se "Skalering"); skalering og udfyldning fittes kun
   på træningssættet (afviger bevidst fra opgavens rækkefølge, undgår datalæk).
-- [ ] C: Valg af decision tree med begrundelse og fravalg (se "C) Valg af model og træning"). Træning *ikke lavet endnu.*
+- [ ] C: Valg af decision tree med begrundelse og fravalg (se "C) Valg af model og træning").
+- [ ] C: `max_depth=5` valgt med krydsvalidering på træningssættet; afstanden til træningsnøjagtigheden som kontrol (se "Valg af dybde").
 - [ ] D-E: Evaluering og eksperimenter. *Ikke lavet endnu.*

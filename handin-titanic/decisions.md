@@ -18,7 +18,8 @@ Outcome of the grill-me session. The requirements themselves are in `expected-so
 | Missing `Embarked`  | 1 row; `S` filled before the split (the mode in any split)                                         |
 | `Embarked` encoding | One-hot: `Embarked_C`, `Embarked_Q`, `Embarked_S` (ports have no order)                            |
 | Scaling             | `StandardScaler` on `Pclass`, `Age`, `Fare` only; fitted on training set (course week 6 precedent) |
-| Model               | Decision tree (section C), for now; random forest planned for section E; see `final-report.md`     |
+| Model               | Decision tree (section C); random forest planned for section E; see `final-report.md`              |
+| Tree depth          | `max_depth=5` via 5-fold CV on the training set: simplest depth within one std of the best         |
 
 ## Terms agreed on
 

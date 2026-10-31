@@ -4,6 +4,30 @@ import pandas as pd
 # The raw file is never changed; re-run this script after adding a step.
 df = pd.read_csv("data/titanic_800.csv")
 
+# --- Explore the raw data ---
+print("Shape (rows, columns):")
+print(df.shape)
+
+print("\nFirst 5 passengers:")
+print(df.head())
+
+print("\nMissing values per column:")
+print(df.isna().sum())
+
+print("\nSurvived (0 = died, 1 = survived) counts:")
+print(df["Survived"].value_counts())
+
+print("\nAverage Pclass for those who died (0) vs survived (1):")
+means = df.groupby("Survived")["Pclass"].mean()
+print(means)
+
+diff = abs(means[0] - means[1])
+print("\nAbsolute difference between the two means:")
+print(diff)
+
+print("\nDifference as % of the died-group mean (survived vs died):")
+print(f"{diff / means[0] * 100:.1f}%")
+
 # --- Step 1: fix corrupted Fare values ---
 # 98 fares lost their decimal point (7.925 -> 7925, 262.375 -> 262375). All of them
 # originally had three decimals; the highest real fare is 512.33, so anything above
@@ -24,7 +48,7 @@ print(df["Sex"].dtype)
 # --- Step 3: flag missing Age ---
 # Passengers with no recorded age survived less often (30 % vs 41 %), so the fact
 # that Age is missing carries information. The flag keeps it after Age is filled in.
-# The fill itself (median) happens in titanic.py after the split, so the median is
+# The fill itself (median) happens in step 8 after the split, so the median is
 # computed from the training set only.
 df["Age_missing"] = df["Age"].isna().astype(int)
 print(f"\nAge missing (flagged): {df['Age_missing'].sum()}")
