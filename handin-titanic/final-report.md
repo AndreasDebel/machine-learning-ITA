@@ -169,6 +169,40 @@ Det endelige træ trænes derefter på alle 640 rækker med `max_depth=5`.
 - **MLP (neuralt netværk):** kursets model i Titanic-øvelsen (uge 6), men svær at forklare og med mange tal at lære
   (153 ved `(8,8)`) ud fra kun 640 passagerer.
 
+## D) Evaluering på testsættet
+
+Det endelige træ (`max_depth=5`) er evalueret én gang på de 160 passagerer i testsættet, som ikke er brugt før.
+`Survived = 1` er den positive klasse.
+
+**Confusion matrix:**
+
+|                   | Forudsagt død | Forudsagt overlevet | I alt |
+|-------------------|---------------|---------------------|-------|
+| Faktisk død       | 87            | 11                  | 98    |
+| Faktisk overlevet | 24            | 38                  | 62    |
+| I alt             | 111           | 49                  | 160   |
+
+**Mål beregnet ud fra matricen:**
+
+| Mål                   | Beregning       | Resultat |
+|-----------------------|-----------------|----------|
+| Korrekt klassificeret | (87 + 38) / 160 | 78,1 %   |
+| Precision             | 38 / (38 + 11)  | 77,6 %   |
+| Recall                | 38 / (38 + 24)  | 61,3 %   |
+
+- **Korrekt klassificeret:** 125 af alle 160 passagerer fik den rigtige forudsigelse.
+- **Precision:** Af de 49, modellen forudsagde ville overleve, overlevede 38.
+- **Recall:** Af de 62, der faktisk overlevede, fandt modellen 38.
+
+**Bedst og dårligst:** Modellen er bedst til at genkende passagerer, der døde: 87 af 98 (88,8 %) blev forudsagt rigtigt.
+Den er dårligst til at finde overlevende: 24 af 62 blev forudsagt at dø. Fejlene er altså skæve, med 24 falske negative
+mod 11 falske positive. En sandsynlig forklaring er, at ca. 61 % i data døde, så træet hælder mod "død"; det er ikke
+testet.
+
+**Vurdering:** Hvis man altid gættede "død", ville 98 af 160 (61,25 %) være rigtige, så modellen er ca. 17 point bedre
+end det simpleste gæt. Resultatet ligger lidt under krydsvalideringens 80,9 %, men forskellen er 2,8 point, og én
+passager svarer til 0,6 point i et testsæt på 160, så det tyder ikke på et reelt problem.
+
 ## Skal nævnes i den endelige rapport (1 side)
 
 - [ ] Hvorfor Titanic er valgt frem for Supply Chain (krav i opgaven).
@@ -182,4 +216,6 @@ Det endelige træ trænes derefter på alle 640 rækker med `max_depth=5`.
   på træningssættet (afviger bevidst fra opgavens rækkefølge, undgår datalæk).
 - [ ] C: Valg af decision tree med begrundelse og fravalg (se "C) Valg af model og træning").
 - [ ] C: `max_depth=5` valgt med krydsvalidering på træningssættet; afstanden til træningsnøjagtigheden som kontrol (se "Valg af dybde").
-- [ ] D-E: Evaluering og eksperimenter. *Ikke lavet endnu.*
+- [ ] D: Confusion matrix, korrekt klassificeret 78,1 %, precision 77,6 %, recall 61,3 %; bedst til døde, dårligst til
+  overlevende (se "D) Evaluering på testsættet").
+- [ ] E: Eksperimenter. *Ikke lavet endnu.*

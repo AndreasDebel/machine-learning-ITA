@@ -16,7 +16,7 @@ Run from inside this folder: `clean.py` first (writes everything in `data/`), th
 | File                                                           | Purpose                                                                                        |
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------------|
 | [clean.py](clean.py)                                           | Raw data exploration, then data prep: fix `Fare`, encode, drop features, split, fill, scale    |
-| [titanic.py](titanic.py)                                       | Loads the train/test CSVs; the model (section C done, D-E to do)                               |
+| [titanic.py](titanic.py)                                       | Loads the train/test CSVs; the model (sections C-D done, E to do)                              |
 | [correlation.ipynb](correlation.ipynb)                         | Evidence for the feature choice (correlation chart, age plot)                                  |
 | [data/](data/INDEX.md)                                         | All CSV files, raw to train/test; `data/INDEX.md` says what each one is                        |
 | [final-report.md](final-report.md)                             | Draft answers in Danish, section by section; the source for the 1-page report                  |
