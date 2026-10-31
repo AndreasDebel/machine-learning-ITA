@@ -75,3 +75,4 @@ Poppler is installed (winget). Use the Read tool with `pages` for PDFs; if it re
 - `.venv/` and `.env` are gitignored. A fresh clone has no venv: create it with
   `python -m venv .venv` before the install step above. `.env` holds secrets (e.g. Canvas
   MCP credentials) and is not a virtual environment - never read or print it.
+- Git: work directly on `main`. This repo does not use feature branches.
