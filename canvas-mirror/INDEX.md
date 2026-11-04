@@ -123,3 +123,16 @@ Notes: slide decks are condensed summaries; exercise PDFs are full transcription
 - `Exercises/Exercises_Week_08.md` - Exercises. Machine Learning. Week 8
 - `MachineLearning_Week_08.md` - Machine Learning Week 8 - lecture slides (Convolutional Neural Networks)
 - `ML_Syllabus_Week_08.md` - Machine Learning Course - Syllabus, Week 8
+
+## 12 - Week_08_Chatbase
+
+- `Build_a_chatbot.md` - Build an AI Chatbot (Chatbase slides: framework, role, constraints)
+- `Exercise_Chatbase.md` - Exercise Chatbase (group mini-investigation of integrating an AI agent)
+- `chatbot_and_link.md` - chatbot.txt and link.txt (Chatbase links)
+
+## 13 - Week_08 - LM Studio
+
+- `ITA_ML_Week_08_LmStudio.md` - ITA-ØK Week 8 LM Studio slides (titles only)
+- `Exercises_Week_08_LmStudio.md` - Exercises Week 8, LM Studio (6 exercises, Exit the Maze challenge)
+- `Exercise_3_Hint.md` - curl hints for the LM Studio server
+- `Exercise_5_Hint_Pseudo_kode.md` - pseudocode for the book-chat agent

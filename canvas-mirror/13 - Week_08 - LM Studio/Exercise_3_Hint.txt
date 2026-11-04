@@ -1,0 +1,64 @@
+Fra command prompt:
+
+curl http://localhost:1234/v1/models
+
+
+C:\>curl http://localhost:1234/v1/models
+{
+  "data": [
+    {
+      "id": "gemma-3-1b-it",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "text-embedding-nomic-embed-text-v1.5",
+      "object": "model",
+      "owned_by": "organization_owner"
+    }
+  ],
+  "object": "list"
+}
+
+
+
+
+curl http://localhost:1234/api/v1/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gemma-3-1b-it",
+    "input": "Write a short haiku about sunrise."
+  }'
+
+
+I windows prompt:
+curl http://localhost:1234/v1/chat/completions -H "Content-Type: application/json" -d "{\"model\": \"gemma-3-1b-it\", \"messages\": [{\"role\": \"user\", \"content\": \"Write a short haiku about sunrise.\"}], \"temperature\": 0.7}"
+
+
+Med svaret:
+C:\>curl http://localhost:1234/v1/chat/completions -H "Content-Type: application/json" -d "{\"model\": \"gemma-3-1b-it\", \"messages\": [{\"role\": \"user\", \"content\": \"Write a short haiku about sunrise.\"}], \"temperature\": 0.7}"
+{
+  "id": "chatcmpl-l0wu80v1dncy2mrfuuq6gl",
+  "object": "chat.completion",
+  "created": 1774601756,
+  "model": "gemma-3-1b-it",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Golden light ascends,\nShadows flee from morning's grace,\nNew day now begins.",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 17,
+    "completion_tokens": 21,
+    "total_tokens": 38
+  },
+  "stats": {},
+  "system_fingerprint": "gemma-3-1b-it"
+}

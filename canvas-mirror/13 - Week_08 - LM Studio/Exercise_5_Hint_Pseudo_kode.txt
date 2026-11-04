@@ -1,0 +1,20 @@
+START PROGRAM
+  INITIALISER LM Studio forbindelse (OpenAI-kompatibel)
+  INITIALISER Chat-historik
+  
+  WHILE brugeren ikke siger 'stop':
+    MODTAG input fra bruger
+    SEND chat-historik + bruger-input til LLM
+    VIS LLM-svar til bruger
+    
+    # Check for enighed (Beslutnings-logik)
+    SEND de sidste 2 beskeder til LLM med en "System Prompt":
+      "Er brugeren og assistenten blevet enige om en specifik bogtitel? 
+       Svar KUN med titlen hvis ja, ellers svar NEJ."
+    
+    IF LLM-svar IKKE er "NEJ":
+      BOGTITEL = LLM-svar
+      PRINT "Enighed fundet! Downloader: " + BOGTITEL
+      KØR download_book_funktion(BOGTITEL)
+      STOP eller FORTSÆT
+END
